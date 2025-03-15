@@ -110,7 +110,7 @@ export default function Header() {
           <div className="flex justify-between h-20 items-center">
             <div>
               <Link href="/">
-                <Image src={logoIcon} alt="logo" className="h-12 w-auto" />
+                <Image src={logoIcon} alt="logo" className="h-12 w-auto"></Image>
               </Link>
             </div>
           </div>
