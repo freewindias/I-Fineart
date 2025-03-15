@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { motion, useAnimate } from "motion/react";
+import GoesOutComesInUnderline from "@/fancy/components/text/underline-goes-out-comes-in"
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -154,7 +155,6 @@ export default function Header() {
                   />
                 </svg>
               </div>
-              <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
             </Link>
           ))}
         </nav>
