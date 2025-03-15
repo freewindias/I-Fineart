@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { motion, useAnimate } from "motion/react";
-import GoesOutComesInUnderline from "@/fancy/components/text/underline-goes-out-comes-in"
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
