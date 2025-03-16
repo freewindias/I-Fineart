@@ -167,7 +167,7 @@ export default function Header() {
                 <Image
                   src={logoIcon}
                   alt="logo"
-                  className="h-12 w-auto"
+                  className="h-16 w-auto"
                 ></Image>
               </Link>
             </div>

@@ -66,3 +66,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.line {
+  @apply overflow-hidden;
+}
+
+.word {
+  @apply translate-y-full;
+}
