@@ -138,7 +138,9 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
             >
               <div className="container !max-w-full flex items-center justify-between">
-                <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">{label}</span>
+                <span className="text-3xl group-hover/nav-item:pl-4 transition-all duration-500">
+                  <Button variant="text">{label}</Button>
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
