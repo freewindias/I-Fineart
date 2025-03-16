@@ -82,7 +82,7 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-2xl"
+      className="sticky z-0 overflow-hidden rounded-2xl mt-20"
     >
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"

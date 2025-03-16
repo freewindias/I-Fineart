@@ -127,7 +127,7 @@ export default function Header() {
     navAnimate,
   ]);
   return (
-    <header className="mb-20 relative z-50">
+    <header className=" relative z-50">
       <div className=" fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900" ref={navScope}>
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
@@ -154,6 +154,7 @@ export default function Header() {
                   />
                 </svg>
               </div>
+              {/* <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 blur-0"></div> */}
             </Link>
           ))}
         </nav>

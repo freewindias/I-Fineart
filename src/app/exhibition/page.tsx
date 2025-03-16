@@ -148,7 +148,7 @@ export default function Exhibition() {
     },
   ];
   return (
-    <div className="w-full">
+    <div className="w-full mt-20">
       <Timeline data={data} />
     </div>
   );
