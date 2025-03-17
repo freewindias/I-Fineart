@@ -5,7 +5,7 @@ import logoIcon from "@/assets/icons/i.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/Button";
-import { motion, useAnimate } from "motion/react";
+import { motion, useAnimate } from "framer-motion";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -39,83 +39,33 @@ export default function Header() {
 
   useEffect(() => {
     if (isOpen) {
-      topLineAnimate([
-        [
-          topLineScope.current,
-          {
-            translateY: 4,
-          },
-        ],
-        [
-          topLineScope.current,
-          {
-            rotate: 45,
-          },
-        ],
-      ]);
-      bottomLineAnimate([
-        [
-          bottomLineScope.current,
-          {
-            translateY: -4,
-          },
-        ],
-        [
-          bottomLineScope.current,
-          {
-            rotate: -45,
-          },
-        ],
-      ]);
-      navAnimate
-      (
-        navScope.current,
-        {
-          height: "100%",
-        },
-        {
-          duration: 0.7,
-        }
+      topLineAnimate(
+        topLineScope.current,
+        { translateY: 4, rotate: 45 },
+        { duration: 0.3 }
       );
+
+      bottomLineAnimate(
+        bottomLineScope.current,
+        { translateY: -4, rotate: -45 },
+        { duration: 0.3 }
+      );
+
+      navAnimate(navScope.current, { height: "100%" }, { duration: 0.7 });
     } else {
-      topLineAnimate([
-        [
-          topLineScope.current,
-          {
-            rotate: 0,
-          },
-        ],
-        [
-          topLineScope.current,
-          {
-            translateY: 0,
-          },
-        ],
-      ]);
-      bottomLineAnimate([
-        [
-          bottomLineScope.current,
-          {
-            rotate: 0,
-          },
-        ],
-        [
-          bottomLineScope.current,
-          {
-            translateY: 0,
-          },
-        ],
-      ]);
-      navAnimate
-      (
-        navScope.current,
-        {
-          height: 0,
-        },
-        {
-          duration: 0.7,
-        }
+      topLineAnimate(
+        topLineScope.current,
+        { rotate: 0, translateY: 0 },
+        { duration: 0.3 }
       );
+
+      bottomLineAnimate(
+        bottomLineScope.current,
+        { rotate: 0, translateY: 0 },
+        { duration: 0.3 }
+      );
+
+      navAnimate(navScope.current, { height: 0 }, { duration: 0.7 });
     }
   }, [
     isOpen,
@@ -128,7 +78,10 @@ export default function Header() {
   ]);
   return (
     <header className=" relative z-50">
-      <div className=" fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900" ref={navScope}>
+      <div
+        className=" fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900"
+        ref={navScope}
+      >
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <Link
@@ -156,7 +109,7 @@ export default function Header() {
                   />
                 </svg>
               </div>
-              {/* <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 blur-0"></div> */}
+              <div className="absolute w-full h-0 bg-stone-800 group-hover/nav-item:h-full transition-all duration-500 bottom-0 -z-10"></div>
             </Link>
           ))}
         </nav>
