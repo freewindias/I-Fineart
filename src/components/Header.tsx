@@ -19,7 +19,7 @@ const navItems = [
   },
   {
     href: "exhibition",
-    label: "Exhibitons",
+    label: "Exhibitions",
   },
   {
     href: "collection",
@@ -117,7 +117,7 @@ export default function Header() {
       <div className="fixed left-0 top-0 w-full backdrop-blur-md z-50">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
-            <div>
+            <Button variant="text">
               <Link href="/">
                 <Image
                   src={logoIcon}
@@ -125,7 +125,7 @@ export default function Header() {
                   className="h-16 w-auto"
                 ></Image>
               </Link>
-            </div>
+            </Button>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@ export default function Header() {
         <div className="container !max-w-full">
           <div className="flex justify-end h-20 items-center">
             <div className=" flex items-center gap-4">
-              <Button variant="primary" className=" md:inline-flex">
+              <Button variant="primary" className=" md:inline-flex" onClick={() => setIsOpen(false)}>
                 <Link href="contact">Contact Me!</Link>
               </Button>
               <div
