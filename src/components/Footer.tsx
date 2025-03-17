@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,12 +41,12 @@ const Footer: FC = () => {
         <div className="section">
           <div className="grid md:grid-cols-3 md:items-center pt-0">
             <div className="md:col-span-2">
-              <h2 className="text-4xl pt-6 font-extralight md:text-7xl lg:text-8xl">
+              <h2 className="text-3xl pt-6 font-extralight md:text-7xl lg:text-8xl">
                 Enough talk. Lets make something great together.
               </h2>
             </div>
             <div>
-              <nav className="flex flex-col md:items-end gap-4 mt-10 md:mt-6">
+              <nav className="flex flex-col md:items-end gap-4 mt-10 md:mt-10">
                 {navItems.map(({ href, label }) => (
                   <Link href={href} key={label}>
                     <Button variant="text" className="text-lg">
