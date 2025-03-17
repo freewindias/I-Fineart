@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import rodiasLogo from "@/assets/images/rodias.jpeg";
-import iLogo from "@/assets/images/i.png";
+
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -43,7 +43,7 @@ const Footer: FC = () => {
           <div className="grid md:grid-cols-3 md:items-center pt-0">
             <div className="md:col-span-2 ">
               <div className="flex">
-                <Image src={iLogo} alt="Ilogo" height={300} width={300}></Image>
+                
                 <h2>Fineart</h2>
               </div>
               {/* <h2 className="text-3xl pt-6 font-extralight md:text-7xl lg:text-8xl">
