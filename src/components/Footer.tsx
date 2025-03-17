@@ -44,7 +44,7 @@ const Footer: FC = () => {
               </h2>
             </div>
             <div>
-              <nav className="flex flex-col md:items-end gap-8 mt-10 md:mt-6">
+              <nav className="flex flex-col md:items-end gap-4 mt-10 md:mt-6">
                 {navItems.map(({ href, label }) => (
                   <Link href={href} key={label}>
                     <Button variant="text" className="text-lg">
