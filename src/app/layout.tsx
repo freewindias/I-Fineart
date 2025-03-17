@@ -17,12 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={"antialiased"}>
         <Header />
-        <div className="relative">
-          <main className="relative z-50 min-h-[100vh] bg-white">
-            {children}
-          </main>
-          <Footer className="sticky bottom-0 z-10" />
-        </div>
+        <main className="relative z-10 min-h-[100vh] bg-white">{children}</main>
+        <Footer />
       </body>
     </html>
   );

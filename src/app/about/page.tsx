@@ -6,7 +6,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const About: React.FC = () => {
   return (
-    <div className="">
+    <div className="relative z-10 bg-white">
       <TextParallaxContent
         imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         subheading="Welcome to I-Fineart"
@@ -51,6 +51,7 @@ const TextParallaxContent = ({
         paddingLeft: IMG_PADDING,
         paddingRight: IMG_PADDING,
       }}
+      className="relative bg-white"
     >
       <div className="relative h-[150vh]">
         <StickyImage imgUrl={imgUrl} />
@@ -82,7 +83,7 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-2xl mt-20"
+      className="sticky z-20 overflow-hidden rounded-2xl mt-20"
     >
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"
@@ -128,7 +129,7 @@ const OverlayCopy = ({
 };
 
 const ExampleContent = () => (
-  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 relative z-20 bg-white">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
       Additional content explaining the above card here
     </h2>
