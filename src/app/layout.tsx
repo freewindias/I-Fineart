@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer/footer";
-
+import Footer from "@/sections/Footer";
 
 export const metadata: Metadata = {
   title: "I-Fineart",
@@ -17,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"antialiased"}>
-        <Header/>
-        {children}
-        <Footer/>
+        <Header />
+        <main className="relative z-10 min-h-[100vh]">{children}</main>
+        <Footer />
       </body>
     </html>
   );
