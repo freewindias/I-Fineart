@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import rodiasLogo from "@/assets/images/rodias.jpeg";
-import lLogo from '@/assets/icons/inewc.svg'
-
+import lLogo from "@/assets/icons/inewc.svg";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [
@@ -36,9 +35,15 @@ const navItems = [
   },
 ];
 
-const Footer: FC = () => {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer: FC<FooterProps> = ({ className = "" }) => {
   return (
-    <footer className="bg-stone-900 text-white sticky bottom-0 -z-0">
+    <footer
+      className={`bg-stone-900 text-white sticky bottom-0 -z-0 ${className}`}
+    >
       <div className="container">
         <div className="section">
           <div className="grid md:grid-cols-3 md:items-center">
