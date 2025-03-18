@@ -117,7 +117,7 @@ export default function Header() {
       <div className="fixed left-0 top-0 w-full backdrop-blur-md z-50">
         <div className="container !max-w-full">
           <div className="flex justify-between h-20 items-center">
-            <Button variant="text">
+            {/* <Button variant="text">
               <Link href="/">
                 <Image
                   src={logoIcon}
@@ -125,15 +125,28 @@ export default function Header() {
                   className="h-16 w-auto"
                 ></Image>
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
       <div className="fixed left-0 top-0 w-full z-50">
         <div className="container !max-w-full">
-          <div className="flex justify-end h-20 items-center">
-            <div className=" flex items-center gap-4">
-              <Button variant="primary" className=" md:inline-flex" onClick={() => setIsOpen(false)}>
+          <div className="flex justify-between h-20 items-center">
+            <div className="flex items-center gap-4">
+              <Link href="/">
+                <Image
+                  src={logoIcon}
+                  alt="logo"
+                  className="h-16 w-auto"
+                ></Image>
+              </Link>
+            </div>
+            <div className="flex items-center gap-4">
+              <Button
+                variant="primary"
+                className="md:inline-flex"
+                onClick={() => setIsOpen(false)}
+              >
                 <Link href="contact">Contact Me!</Link>
               </Button>
               <div
