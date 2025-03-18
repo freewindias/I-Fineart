@@ -134,11 +134,13 @@ export default function Header() {
           <div className="flex justify-between h-20 items-center">
             <div className="flex items-center gap-4">
               <Link href="/">
-                <Image
-                  src={logoIcon}
-                  alt="logo"
-                  className="h-16 w-auto"
-                ></Image>
+                <div className="flex text-xl md:text-2xl lg:text-2xl">
+                  <Image
+                    src={logoIcon}
+                    alt="logo"
+                    className="h-16 w-auto"/>
+                  <Button variant="text">Fineart</Button>
+                </div>
               </Link>
             </div>
             <div className="flex items-center gap-4">
