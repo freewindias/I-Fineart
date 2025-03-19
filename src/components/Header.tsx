@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import logoIcon from "@/assets/icons/i.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./ui/Button";
+import Button from "./ui/GGButton";
 import { motion, useAnimate } from "framer-motion";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
@@ -135,10 +135,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <Link href="/">
                 <div className="flex text-xl md:text-2xl lg:text-2xl">
-                  <Image
-                    src={logoIcon}
-                    alt="logo"
-                    className="h-16 w-auto"/>
+                  <Image src={logoIcon} alt="logo" className="h-16 w-auto" />
                   <Button variant="text">Fineart</Button>
                 </div>
               </Link>
@@ -152,7 +149,7 @@ export default function Header() {
                 <Link href="contact">Contact Me!</Link>
               </Button>
               <div
-                className="size-11 border border-stone-400 rounded-full inline-flex items-center justify-center bg-stone-200"
+                className="size-11 border border-stone-400 rounded-full inline-flex items-center justify-center bg-white text-black"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg

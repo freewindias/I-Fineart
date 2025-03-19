@@ -3,7 +3,7 @@
 import Image from "next/image";
 import heroImage from "@/assets/images/hero.jpg";
 import { motion } from "motion/react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/GGButton";
 import Link from "next/link";
 import useTextRevealAnimation from "@/hooks/useTextRevealAnimation";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     entranceAnimation();
-  },[entranceAnimation])
+  }, [entranceAnimation]);
 
   return (
     <div className="h-screen !max-w-full flex items-center justify-center relative">
@@ -32,7 +32,7 @@ export default function Home() {
           Every canvas is a journey all its own.
         </motion.h1>
         <motion.div
-          initial={{ opacity: 0, y: '100%' }}
+          initial={{ opacity: 0, y: "100%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.5,

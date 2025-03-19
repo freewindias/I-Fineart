@@ -1,12 +1,11 @@
 "use client";
 
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/GGButton";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import rodiasLogo from "@/assets/images/rodias.jpeg";
-import lLogo from '@/assets/icons/inewc.svg'
-
+import lLogo from "@/assets/icons/inewc.svg";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const navItems = [

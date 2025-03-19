@@ -1,6 +1,5 @@
-import ContactForm from "@/components/ContactForm";
-// import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
+import ContactForm from "@/components/MainContactForm";
 import React from "react";
 
 export default function Contact() {
