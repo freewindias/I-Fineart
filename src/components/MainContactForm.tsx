@@ -38,20 +38,45 @@ export default function ContactForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      console.log(values);
-      toast(
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-        </pre>
-      );
-      // Reset form fields after successful submission
-      form.reset({
-        firstname: "",
-        lastname: "",
-        email: "",
-        Message: "",
-      });
+      // Show loading toast
+      toast.loading("Submitting your message...");
+
+      // Send form data to the API route
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          recipients: ["contact@i-fineart.com", "contact@rodias.in"],
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to submit form");
+          }
+          return response.json();
+        })
+        .then(() => {
+          toast.dismiss();
+          toast.success("Message sent successfully!");
+
+          // Reset form fields after successful submission
+          form.reset({
+            firstname: "",
+            lastname: "",
+            email: "",
+            Message: "",
+          });
+        })
+        .catch((error) => {
+          toast.dismiss();
+          console.error("Form submission error", error);
+          toast.error("Failed to submit the form. Please try again.");
+        });
     } catch (error) {
+      toast.dismiss();
       console.error("Form submission error", error);
       toast.error("Failed to submit the form. Please try again.");
     }
