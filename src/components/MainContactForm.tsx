@@ -49,7 +49,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           ...values,
-          recipients: ["contact@i-fineart.com", "contact@rodias.in"],
+          recipients: ["contact@i-fineart.com", "info@rodias.in"],
         }),
       })
         .then((response) => {
