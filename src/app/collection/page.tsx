@@ -9,6 +9,9 @@ export default function Collection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Latest Art Works:</h2>
         <ArtworkCarousel />
       </section>
+      <section className='mb-20'>
+
+      </section>
 
       <section>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Artworks</h2>
