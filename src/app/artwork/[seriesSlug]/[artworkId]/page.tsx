@@ -55,7 +55,7 @@ export default function ArtworkDetailPage({
   return (
     <main className="mt-20 min-h-screen bg-black p-4 md:p-6">
       <div className="max-w-[1550px] mx-auto">
-        <div className="bg-gray-200 rounded-lg p-4 md:pt-4 ">
+        <div className="rounded-lg p-4 md:pt-4 ">
           {/* Back button */}
           <div className="mb-2">
             <Link
@@ -81,20 +81,20 @@ export default function ArtworkDetailPage({
 
           {/* Artwork details */}
           <div className="mb-10 space-y-1">
-            <p className="text-black text-xl font-medium">
+            <p className="text-xl font-medium">
               Series: {series.title}
             </p>
-            <p className="text-black">Size: {artwork.size || "30 x 40 cm"}</p>
-            <p className="text-black">Finish: {artwork.finish || "Matte"}</p>
-            <p className="text-black">
+            <p className="">Size: {artwork.size || "30 x 40 cm"}</p>
+            <p className="">Finish: {artwork.finish || "Matte"}</p>
+            <p className="">
               Medium: {artwork.medium || "Acrylic on canvas"}
             </p>
             <div className="flex items-center mt-4">
-              <p className="text-black">Want for yourself message here!</p>
+              <p className="">Want for yourself message here!</p>
               <Link
                 href={`https://wa.me/?text=I'm interested in the artwork "${artwork.alt}" from the "${series.title}" series.`}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" 
                 className="ml-2"
               >
                 <MessageCircle className="text-black" />
@@ -104,7 +104,7 @@ export default function ArtworkDetailPage({
 
           {/* Related artworks carousel */}
           <div className="mb-10">
-            <h2 className="text-black text-xl font-medium text-center mb-6">
+            <h2 className="text-xl font-medium text-center mb-6">
               View more from the current series
             </h2>
             <RelatedArtworksCarousel
@@ -115,7 +115,7 @@ export default function ArtworkDetailPage({
 
           {/* Other series */}
           <div>
-            <h2 className="text-black text-xl font-medium text-center mb-6">
+            <h2 className="text-xl font-medium text-center mb-6">
               View other series
             </h2>
             <OtherSeriesGrid currentSeriesId={series.id} />

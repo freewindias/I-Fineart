@@ -76,14 +76,14 @@ export default function RelatedArtworksCarousel({ artworks, seriesSlug }: Relate
       <div className="flex justify-center gap-2">
         <button
           onClick={handlePrevious}
-          className="bg-black text-white rounded-full p-2 hover:bg-gray-800"
+          className="bg-white text-black rounded-full p-2 hover:bg-gray-800"
           aria-label="Previous artwork"
         >
           <ArrowLeft size={20} />
         </button>
         <button
           onClick={handleNext}
-          className="bg-black text-white rounded-full p-2 hover:bg-gray-800"
+          className="bg-white text-black rounded-full p-2 hover:bg-gray-800"
           aria-label="Next artwork"
         >
           <ArrowRight size={20} />

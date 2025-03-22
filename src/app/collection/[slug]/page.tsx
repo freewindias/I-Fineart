@@ -23,10 +23,10 @@ export default function SeriesDetailPage({ params }: { params: { slug: string } 
   }
 
   return (
-    <main className="mt-20 min-h-screen bg-black p-4 md:px-8">
+    <main className="mt-20 min-h-screen p-4 md:px-8">
       <div className="max-w-[1550px] mx-auto">
-        <div className="bg-gray-200 rounded-lg p-6">
-          <div className="flex items-center mb-2">
+        <div className="rounded-lg p-6">
+          <div className="flex items-center mb-6">
             <Link
               href="/collection"
               className="bg-white rounded-full p-3 mr-4 inline-flex items-center justify-center"
@@ -34,7 +34,7 @@ export default function SeriesDetailPage({ params }: { params: { slug: string } 
             >
               <ArrowLeft size={24} className="text-black" />
             </Link>
-            <h1 className="text-2xl md:text-3xl font-bold text-black">{series.title}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold ">{series.title}</h1>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

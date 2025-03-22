@@ -5,7 +5,7 @@ export const artworkSeries = [
       title: "Enigma of Beauty",
       slug: "enigma-of-beauty",
       images: [
-        "/placeholder.svg?height=600&width=600",
+        "@/assets/images/hero.jpg",
         "/placeholder.svg?height=600&width=600",
         "/placeholder.svg?height=600&width=600",
         "/placeholder.svg?height=600&width=600",
@@ -13,7 +13,7 @@ export const artworkSeries = [
       artworks: [
         {
           id: 1,
-          src: "/placeholder.svg?height=800&width=1200",
+          src: "@/assets/images/hero.jpg",
           alt: "Enigma of Beauty - Artwork 1",
           size: "30 x 40 cm",
           finish: "Matte",
