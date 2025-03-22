@@ -23,10 +23,10 @@ export default function SeriesDetailPage({ params }: { params: { slug: string } 
   }
 
   return (
-    <main className="mt-20 min-h-screen bg-black p-4 md:p-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-gray-200 rounded-lg p-6 md:p-8">
-          <div className="flex items-center mb-8">
+    <main className="mt-20 min-h-screen bg-black p-4 md:px-8">
+      <div className="max-w-[1550px] mx-auto">
+        <div className="bg-gray-200 rounded-lg p-6">
+          <div className="flex items-center mb-2">
             <Link
               href="/collection"
               className="bg-white rounded-full p-3 mr-4 inline-flex items-center justify-center"

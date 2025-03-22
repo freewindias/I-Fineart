@@ -54,10 +54,10 @@ export default function ArtworkDetailPage({
 
   return (
     <main className="mt-20 min-h-screen bg-black p-4 md:p-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-gray-200 rounded-lg p-6 md:p-8">
+      <div className="max-w-[1550px] mx-auto">
+        <div className="bg-gray-200 rounded-lg p-4 md:pt-4 ">
           {/* Back button */}
-          <div className="mb-6">
+          <div className="mb-2">
             <Link
               href={`/collection/${seriesSlug}`}
               className="bg-white rounded-full p-3 inline-flex items-center justify-center"
@@ -73,7 +73,7 @@ export default function ArtworkDetailPage({
               src={artwork.src || "/placeholder.svg"}
               alt={artwork.alt}
               width={1200}
-              height={800}
+              height={600}
               className="w-full h-auto object-contain"
               priority
             />
