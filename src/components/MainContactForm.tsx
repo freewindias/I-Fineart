@@ -91,7 +91,7 @@ export default function ContactForm() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4"></div>
         </div>
       </div>
-      <div className="mx-auto container">
+      <div className="mx-auto p-4 md:px-9 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-16 mt-6">
           <div className="space-y-2">
             <div>
