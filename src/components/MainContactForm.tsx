@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { VelocityScroll } from "./magicui/scroll-based-velocity";
 import Link from "next/link";
 import Button from "./ui/GGButton";
+import { LinkPreview } from "./ui/link-preview";
 
 const formSchema = z.object({
   firstname: z.string().min(1).max(1000000).optional(),
@@ -107,23 +108,49 @@ export default function ContactForm() {
               </h4>
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex flex-wrap gap-3 w-full sm:w-auto">
-                  <Button variant="text">
-                    <Link href="#">INSTAGRAM</Link>
-                  </Button>
+                  <LinkPreview url="https://www.instagram.com/vik_ifineart/" className="text-white">
+                      <Button variant="text">
+                          <Link href="https://www.instagram.com/vik_ifineart/">
+                            INSTAGRAM
+                          </Link>
+                      </Button>
+                    </LinkPreview>
                   <span>—</span>
-                  <Button variant="text">
-                    <Link href="#">TWITTER</Link>
-                  </Button>
+                  <LinkPreview url="https://www.facebook.com/vikrant.belu/" className="text-white">
+                      <Button variant="text">
+                          <Link href="https://www.facebook.com/vikrant.belu/">
+                            FACEBOOK
+                          </Link>
+                      </Button>
+                    </LinkPreview>
                   <span>—</span>
                 </div>
                 <div className="flex flex-wrap gap-3 w-full sm:w-auto">
-                  <Button variant="text">
-                    <Link href="#">YOUTUBE</Link>
-                  </Button>
-                  <span>—</span>
-                  <Button variant="text">
-                    <Link href="#">PINTEREST</Link>
-                  </Button>
+                    <LinkPreview url="https://www.youtube.com/@i-Fineart" className="text-white">
+                      <Button variant="text">
+                          <Link href="https://www.youtube.com/@i-Fineart">
+                            YOUTUBE
+                          </Link>
+                      </Button>
+                    </LinkPreview>
+                    <span>—</span>
+                    <LinkPreview url="https://www.instagram.com/vik_ifineart/" className="text-white">
+                      <Button variant="text">
+                          <Link href="https://www.instagram.com/vik_ifineart/">
+                            PINTEREST
+                          </Link>
+                      </Button>
+                    </LinkPreview>
+                    <span>—</span>
+                </div>
+                <div className="flex flex-wrap gap-3 w-full sm:w-auto">
+                  <LinkPreview url="https://www.threads.net/@vik_ifineart" className="text-white">
+                    <Button variant="text">
+                        <Link href="https://www.threads.net/@vik_ifineart">
+                            THREADS
+                        </Link>
+                      </Button>
+                  </LinkPreview>
                 </div>
               </div>
             </div>

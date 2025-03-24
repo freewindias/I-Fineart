@@ -80,8 +80,7 @@ export default function Header() {
     <header className=" relative z-50">
       <div
         className=" fixed top-0 left-0 w-full h-0 overflow-hidden bg-stone-900"
-        ref={navScope}
-      >
+        ref={navScope}>
         <nav className="mt-20 flex flex-col">
           {navItems.map(({ label, href }) => (
             <Link
