@@ -67,10 +67,13 @@ export default function Navbar() {
                 <LetterSwapForward label="Exhibitions" staggerFrom={"center"}/>
             </Link>
             <Link href="/collection" className="text-white hover:text-gray-300">
-                <LetterSwapForward label="Collection" staggerFrom={"last"}/>
+                <LetterSwapForward label="Collection" staggerFrom={"center"}/>
             </Link>
             <Link href="/store" className="text-white hover:text-gray-300">
                 <LetterSwapForward label="Store" staggerFrom={"last"}/>
+            </Link>
+            <Link href="/contact" className="text-white hover:text-gray-300">
+                <LetterSwapForward label="Contact" staggerFrom={"last"}/>
             </Link>
           </div>
 
@@ -113,7 +116,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="border-b-2 border-white/50 md:hidden bg-black/50 backdrop-blur-md px-6 py-4">
             <div className="flex flex-col space-y-3">
-                <Link href="/store" className="text-white hover:text-gray-300">
+                <Link href="/" className="text-white hover:text-gray-300">
                     <motion.div
                         initial={{ opacity: 0, y: "100%" }}
                         animate={{ opacity: 1, y: 0 }}
@@ -166,6 +169,17 @@ export default function Navbar() {
                             delay: 0.6,
                         }}>
                             Store
+                    </motion.div>
+                </Link>
+                <Link href="/contact" className="text-white hover:text-gray-300">
+                    <motion.div
+                        initial={{ opacity: 0, y: "100%" }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.7,
+                        }}>
+                            Contact
                     </motion.div>
                 </Link>
             </div>
