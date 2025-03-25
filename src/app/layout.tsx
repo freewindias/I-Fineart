@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Footer from "@/components/Footer";
-
-import NavNew from "@/components/NavbarNew";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "I-Fineart",
@@ -18,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"antialiased bg-black text-white"}>
-        <NavNew/>
+        {/* <NavNew/> */}
+        <Navbar/>
         <main className="relative z-10 min-h-[100vh] bg-black text-white">{children}</main>
         <Footer />
       </body>
