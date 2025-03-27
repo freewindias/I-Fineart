@@ -17,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"antialiased bg-black text-white"}>
-        {/* <NavNew/> */}
         <Navbar/>
         <main className="relative z-10 min-h-[100vh] bg-black text-white">{children}</main>
         <Footer />
