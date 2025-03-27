@@ -2,85 +2,10 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ChevronDown } from "lucide-react"
-
-// Product type definition
-type Product = {
-  id: number
-  name: string
-  category: string
-  price: number
-  image: string
-  type: string
-}
-
-// Sample product data
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Round Neck Tshirt",
-    category: "Tshirt",
-    price: 400,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Tshirt",
-  },
-  {
-    id: 2,
-    name: "Round Neck Tshirt",
-    category: "Tshirt",
-    price: 400,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Tshirt",
-  },
-  {
-    id: 3,
-    name: "Round Neck Tshirt",
-    category: "Tshirt",
-    price: 400,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Tshirt",
-  },
-  {
-    id: 4,
-    name: "Round Neck Tshirt",
-    category: "Tshirt",
-    price: 400,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Tshirt",
-  },
-  {
-    id: 5,
-    name: "Hoodie Classic",
-    category: "Hoodies",
-    price: 800,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Hoodies",
-  },
-  {
-    id: 6,
-    name: "Winter Sweather",
-    category: "Sweathers",
-    price: 600,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Hoodies",
-  },
-  {
-    id: 7,
-    name: "Art Keychain",
-    category: "Keychain",
-    price: 150,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Keychain",
-  },
-  {
-    id: 8,
-    name: "Premium Hoodie",
-    category: "Hoodies",
-    price: 950,
-    image: "/placeholder.svg?height=300&width=300",
-    type: "Hoodies",
-  },
-]
+import { getAllProducts } from "@/lib/product-data"
+import HeaderActions from "@/components/header-actions"
 
 // Filter categories with their border colors
 const filterCategories = [
@@ -94,10 +19,11 @@ const filterCategories = [
 // Sort options
 const sortOptions = ["Price Low to High", "Price High to Low", "Newest First", "Oldest First"]
 
-export default function Store() {
+export default function StorePage() {
+  const products = getAllProducts()
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [sortBy, setSortBy] = useState(sortOptions[0])
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products)
+  const [filteredProducts, setFilteredProducts] = useState(products)
   const [showSortOptions, setShowSortOptions] = useState(false)
 
   // Filter and sort products when category or sort option changes
@@ -115,18 +41,21 @@ export default function Store() {
     } else if (sortBy === "Price High to Low") {
       result.sort((a, b) => b.price - a.price)
     } else if (sortBy === "Newest First") {
-      result.sort((a, b) => b.id - a.id)
+      result.sort((a, b) => b.id.localeCompare(a.id))
     } else if (sortBy === "Oldest First") {
-      result.sort((a, b) => a.id - b.id)
+      result.sort((a, b) => a.id.localeCompare(b.id))
     }
 
     setFilteredProducts(result)
-  }, [selectedCategory, sortBy])
+  }, [selectedCategory, sortBy, products])
 
   return (
-    <main className="mt-20 min-h-screen bg-black text-white p-4 md:px-9 lg:px-16">
-      <div className=" mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">Explore My Exclusive Merchandise</h1>
+    <main className="min-h-screen bg-black text-white p-4 md:p-6 pt-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold">Explore My Exclusive Merchandise</h1>
+          <HeaderActions />
+        </div>
 
         {/* Filters and Sort */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
@@ -178,18 +107,20 @@ export default function Store() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-zinc-900 rounded-md overflow-hidden">
-              <div className="bg-gray-200 aspect-square relative">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name}  className="object-cover" height={300} width={300}/>
+            <Link key={product.id} href={`/product/${product.id}`} className="block">
+              <div className="bg-zinc-900 rounded-md overflow-hidden">
+                <div className="bg-gray-200 aspect-square relative">
+                  <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-medium">{product.name}</h3>
+                  <p className="text-xs text-gray-400">{product.type}</p>
+                  <p className="mt-2">Rs {product.price}</p>
+                </div>
               </div>
-              <div className="p-4">
-                <h3 className="font-medium">{product.name}</h3>
-                <p className="text-xs text-gray-400">{product.type}</p>
-                <p className="mt-2">Rs {product.price}</p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
 
