@@ -50,7 +50,7 @@ export default function StorePage() {
   }, [selectedCategory, sortBy, products])
 
   return (
-    <main className="min-h-screen bg-black text-white p-4 md:p-6 pt-20">
+    <main className="min-h-screen mt-20 bg-black text-white p-4 md:p-6 pt-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">Explore My Exclusive Merchandise</h1>

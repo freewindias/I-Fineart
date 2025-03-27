@@ -30,7 +30,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white p-4 md:p-6 pt-20">
+    <main className="mt-20 min-h-screen bg-black text-white p-4 md:p-6 pt-20">
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold">My Profile</h1>
