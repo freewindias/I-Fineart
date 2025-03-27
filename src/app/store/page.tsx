@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { getAllProducts } from "@/lib/product-data"
-import HeaderActions from "@/components/header-actions"
+import HeaderActions from "@/components/StoreCompo/header-actions"
 
 // Filter categories with their border colors
 const filterCategories = [
